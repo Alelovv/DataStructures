@@ -36,7 +36,7 @@ class Queue:
 
 class BSTNode:
     def __init__(self, value):
-        self.value = value
+        self.value = value #сохраняем полученное значение
         self.left = None
         self.right = None
 
@@ -306,7 +306,6 @@ class BSTPanel(BasePanel):
         
         cw, ch = self.canvas.winfo_width() or 600, self.canvas.winfo_height() or 350
         positions = {}
-        # ОШИБКА ИСПРАВЛЕНА: Передаем index=1 вместо 0, чтобы сбалансировать дерево по центру экрана
         self._calc_positions(self.bst.root, 0, 1, 1, positions, cw)
         
         h_tree = self._height(self.bst.root)
@@ -384,3 +383,4 @@ class App(tk.Tk):
 
 if __name__ == "__main__":
     App().mainloop()
+# pyinstaller --onefile --windowed --name="DataStructures" main.py
